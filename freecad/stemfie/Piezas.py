@@ -2642,7 +2642,7 @@ class STR_BXS_ESS_H:
             "App::PropertyInteger",
             QT_TRANSLATE_NOOP("App::Property", "HolesNumber"),
             QT_TRANSLATE_NOOP("App::Property", "Part parameters"),
-            QT_TRANSLATE_NOOP("App::Property", "Holes number \nMinimum = 1"),
+            QT_TRANSLATE_NOOP("App::Property", "Holes number\nMinimum = 1"),
         )
         obj.HolesNumber = 1
 
@@ -2698,7 +2698,7 @@ class STR_BXS_ESS_C:
             "App::PropertyInteger",
             QT_TRANSLATE_NOOP("App::Property", "HolesNumber"),
             QT_TRANSLATE_NOOP("App::Property", "Part parameters"),
-            QT_TRANSLATE_NOOP("App::Property", "Holes number \nMinimum = 3"),
+            QT_TRANSLATE_NOOP("App::Property", "Holes number\nMinimum = 3"),
         )
         obj.HolesNumber = 3
 

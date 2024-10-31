@@ -60,7 +60,7 @@ class StemfieWorkbench(Workbench):
         ]
         self.list_shafts = ["STEMFIE_Shaft_SFT_PLN"]
         self.list_springs = []
-        self.list_commands = ["STEMFIE_Cmd_Listado"]
+        self.list_commands = ["STEMFIE_PartsList"]
 
         self.appendToolbar(QT_TRANSLATE_NOOP("Workbench", "Stemfie Beams"), self.list_beams)
         self.appendToolbar(QT_TRANSLATE_NOOP("Workbench", "Stemfie Braces"), self.list_braces)

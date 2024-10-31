@@ -1,8 +1,9 @@
+import os
+import random
+
 import FreeCAD
 import FreeCADGui
 
-import os
-import random
 from freecad.stemfie import ICONPATH, Piezas, Plates, Shafts, get_icon_path
 
 QT_TRANSLATE_NOOP = FreeCAD.Qt.QT_TRANSLATE_NOOP
@@ -83,7 +84,7 @@ class STR_ESS(BaseCommand):
     FUNCTION = Piezas.STR_ESS
     pixmap = os.path.join(ICONPATH, "Beam STR ESS_icon.png")
     menutext = "STR ESS"
-    tooltip = QT_TRANSLATE_NOOP("STEMFIE_Beam_STR_ESS", "Beam - Straight - Ending Square Square")
+    tooltip = QT_TRANSLATE_NOOP("STEMFIE_Beam_STR_ESS", "Beam - Straight - End Square Square")
 
 
 class STR_ERR(BaseCommand):
@@ -117,7 +118,7 @@ class STR_BED(BaseCommand):
     FUNCTION = Piezas.STR_BED
     pixmap = os.path.join(ICONPATH, "Beam STR BED_icon.png")
     menutext = "STR BED"
-    tooltip = QT_TRANSLATE_NOOP("STEMFIE_Beam_STR_BED", "Beam - Straight - BED")  # FIXME: BED?
+    tooltip = QT_TRANSLATE_NOOP("STEMFIE_Beam_STR_BED", "Beam - Straight - Double")
 
 
 class STR_BET(BaseCommand):
@@ -125,7 +126,7 @@ class STR_BET(BaseCommand):
     FUNCTION = Piezas.STR_BET
     pixmap = os.path.join(ICONPATH, "Beam STR BET_icon.png")
     menutext = "STR BET"
-    tooltip = QT_TRANSLATE_NOOP("STEMFIE_Beam_STR_BET", "Beam - Straight - BET")  # FIXME: BET?
+    tooltip = QT_TRANSLATE_NOOP("STEMFIE_Beam_STR_BET", "Beam - Straight - Triple")
 
 
 class STR_BXS_ESS_H(BaseCommand):
@@ -332,7 +333,7 @@ class PLT_TRI(BaseCommand):
     FUNCTION = Plates.PLT_TRI
     pixmap = os.path.join(ICONPATH, "Plate_TRI.svg")
     menutext = "PLT TRI"
-    tooltip = QT_TRANSLATE_NOOP("STEMFIE_Plate_TRI_PLT", "Plate - Triangular")
+    tooltip = QT_TRANSLATE_NOOP("STEMFIE_Plate_TRI", "Plate - Triangular")
 
 
 class PLT_SQR(BaseCommand):
@@ -357,14 +358,11 @@ class SFT_PLN(BaseCommand):
     FUNCTION = Shafts.SFT_PLN
     pixmap = os.path.join(ICONPATH, "SFT_PLN.svg")
     menutext = "SFT PLN"
-    tooltip = QT_TRANSLATE_NOOP(
-        "STEMFIE_Shaft_SFT_PLN",
-        "Shaft - Plain",
-    )
+    tooltip = QT_TRANSLATE_NOOP("STEMFIE_Shaft_SFT_PLN", "Shaft - Plain")
 
 
 #  Comandos
-class Cmd_Listado:
+class PartsList:
     def IsActive(self):
         if FreeCAD.ActiveDocument is None:
             return False
@@ -379,9 +377,9 @@ class Cmd_Listado:
     def GetResources(self):
         return {
             "Pixmap": os.path.join(ICONPATH, "BoM.svg"),
-            "MenuText": QT_TRANSLATE_NOOP("STEMFIE_Cmd_Listado", "Part list"),
+            "MenuText": QT_TRANSLATE_NOOP("STEMFIE_PartsList", "Parts list"),
             "ToolTip": QT_TRANSLATE_NOOP(
-                "STEMFIE_Cmd_Listado", "Print a list of the STEMFIE parts on the tree"
+                "STEMFIE_PartsList", "Print a list of the STEMFIE parts on the tree"
             ),
         }
 
@@ -420,5 +418,5 @@ FreeCADGui.addCommand("STEMFIE_Plate_SQR", PLT_SQR())
 FreeCADGui.addCommand("STEMFIE_Plate_HEX", PLT_HEX())
 # Shafts
 FreeCADGui.addCommand("STEMFIE_Shaft_SFT_PLN", SFT_PLN())
-# Comandos
-FreeCADGui.addCommand("STEMFIE_Cmd_Listado", Cmd_Listado())
+# Utilities
+FreeCADGui.addCommand("STEMFIE_PartsList", PartsList())
